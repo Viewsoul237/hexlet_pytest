@@ -9,10 +9,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+      - name: Set up Python 
+        uses: actions/setup-python@v4.6.1
         # make depends on poetry
       - name: Install dependencies    
         run: |
           pip install poetry
           poetry install
+      - name: pylint
+        run: poetry run pytest
+
+
+
