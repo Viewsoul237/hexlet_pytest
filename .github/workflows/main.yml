@@ -24,4 +24,4 @@ jobs:
           poetry install
       - name: Run linter and pytest
         run: |
-          echo "noob"
+          poetry run pytest
