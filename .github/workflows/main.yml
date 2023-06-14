@@ -25,3 +25,9 @@ jobs:
       - name: Run linter and pytest
         run: |
           poetry run pytest
+          
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYC_TOKEN }} 
